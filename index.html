@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- =================== REMIXICON =================== -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+
+    <!-- =================== CSS =================== -->
+    <link rel="stylesheet" href="./styles.css">
+
+    <!-- =================== TITLE =================== -->
+    <title>Books Library</title>
+</head>
+
+<body>
+    <!-- =================== LOADER =================== -->
+    <div class="loader" id="loader">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+            <circle fill="#16a34a" stroke="#16a34a" stroke-width="3" r="15" cx="40" cy="65">
+                <animate attributeName="cy" calcMode="spline" dur="2" values="65;135;65;"
+                    keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-.4"></animate>
+            </circle>
+            <circle fill="#16a34a" stroke="#16a34a" stroke-width="3" r="15" cx="100" cy="65">
+                <animate attributeName="cy" calcMode="spline" dur="2" values="65;135;65;"
+                    keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-.2"></animate>
+            </circle>
+            <circle fill="#16a34a" stroke="#16a34a" stroke-width="3" r="15" cx="160" cy="65">
+                <animate attributeName="cy" calcMode="spline" dur="2" values="65;135;65;"
+                    keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="0"></animate>
+            </circle>
+        </svg>
+    </div>
+
+    <!-- =================== HEADER =================== -->
+    <header class="header">
+        <!-- =================== NAV =================== -->
+        <nav class="nav">
+            <div class="nav__top">
+                <div class="nav__credit">
+                    Design & develop by
+                    <a href="https://github.com/janarahul1234" class="nav__credit-link">Rahul Jana</a>
+                </div>
+
+                <div class="nav__logo">
+                    <span class="nav__logo-text">Books Library</span>
+                    <span class="nav__logo-sub">By, ChaiCode</span>
+                </div>
+            </div>
+
+            <div class="nav__bottom">
+                <form method="GET" class="search-form">
+                    <div class="search-form__group">
+                        <input type="text" placeholder="Search books..." class="search-form__input">
+
+                        <details class="search-form__dropdown">
+                            <summary>
+                                <span id="dropdown-label">Filter</span>
+                                <i class="ri-arrow-down-s-line"></i>
+                            </summary>
+
+                            <div class="search-form__dropdown-options">
+                                <button class="search-form__dropdown-option">Title</button>
+                                <button class="search-form__dropdown-option">Author</button>
+                            </div>
+                        </details>
+                    </div>
+
+                    <button class="search-form__button">
+                        <i class="ri-search-line"></i>
+                    </button>
+                </form>
+
+                <div class="view__buttons">
+                    <button class="view__button" id="list-view-button">
+                        <i class="ri-list-check"></i>
+                        <span>List</span>
+                    </button>
+
+                    <button class="view__button" id="grid-view-button">
+                        <i class="ri-layout-grid-line"></i>
+                        <span>Grid</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- =================== BOOKS LIBRARY =================== -->
+    <section class="books-library">
+        <div class="container">
+            <!-- Table -->
+            <table class="books-table" id="books-table">
+                <thead class="books-table__header">
+                    <tr>
+                        <th scope="col">Thumbnail</th>
+                        <th scope="col">
+                            Title
+                            <button class="books-table__button" id="title-sort-button">
+                                <i class="ri-sort-asc"></i>
+                            </button>
+                        </th>
+                        <th scope="col">Author</th>
+                        <th scope="col">Publisher</th>
+                        <th scope="col">
+                            Published Date
+                            <button class="books-table__button" id="date-sort-button">
+                                <i class="ri-sort-asc"></i>
+                            </button>
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody class="books-table__body" id="books-table-container"></tbody>
+            </table>
+
+            <!-- Cards -->
+            <div class="cards" id="cards-container"></div>
+
+            <div class="pagination">
+                <div class="pagination__info"></div>
+
+                <div class="pagination__buttons">
+                    <button class="pagination__button" id="first-page-button">
+                        <i class="ri-arrow-left-double-line"></i>
+                    </button>
+
+                    <button class="pagination__button" id="prev-page-button">
+                        <i class="ri-arrow-left-s-line"></i>
+                    </button>
+
+                    <div class="pagination__page-buttons"></div>
+
+                    <button class="pagination__button" id="next-page-button">
+                        <i class="ri-arrow-right-s-line"></i>
+                    </button>
+
+                    <button class="pagination__button" id="last-page-button">
+                        <i class="ri-arrow-right-double-line"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================== MAIN JS =================== -->
+    <script type="module" src="./main.js"></script>
+</body>
+
+</html>
